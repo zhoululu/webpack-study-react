@@ -33,7 +33,7 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, use: 'babel-loader' },
+      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader', 'eslint-loader'] },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
       { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
       { 
